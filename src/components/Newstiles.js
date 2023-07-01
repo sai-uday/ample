@@ -5,7 +5,7 @@ export class Newstiles extends Component {
     let { title, description, newsUrl, score } = this.props;
     return (
       <div>
-        <div className="card sm" style={{ width: "80rem" }}>
+        <div className="card sm" style={{ width: "70rem" }}>
           <div className="card-body">
             <h5 className="card-title">{title}</h5>
             <div
