@@ -22,7 +22,7 @@ export class Main extends Component {
                 <div className='row'>
                     {this.state.articles.map((element) => {
                         return <div className='col-md-12 my-3' key={element.data.created}>
-                            <Cards title={element.data.title?element.data.title:""} description={element.data.selftext_html?element.data.selftext_html:""} newsUrl={element.data.url?element.data.url:""} score={element.data.score?element.data.score:"no data"}/>
+                            <Cards title={element.data.title?element.data.title:"no data"} description={element.data.selftext_html?element.data.selftext_html:"no data"} newsUrl={element.data.url?element.data.url:""} score={element.data.score?element.data.score:"no data"}/>
                         </div>
                     })}
                 </div>
