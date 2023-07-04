@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import Newstiles from './Newstiles'
+import Cards from './Cards'
 
-export class News extends Component {
+export class Main extends Component {
 
     constructor() {
         super()
@@ -14,7 +14,6 @@ export class News extends Component {
         let data = await fetch(url);
         let parsedData = await data.json();
         this.setState({ articles: parsedData.data.children })
-        // console.log(this.state.articles,parsedData.data.children.data.title)
     }
     render() {
         return (
@@ -22,9 +21,8 @@ export class News extends Component {
 
                 <div className='row'>
                     {this.state.articles.map((element) => {
-                        return <div className='col-md-12 my-1' key={element.data.created}>
-                            {/* {console.log(element.data.url)} */}
-                            <Newstiles title={element.data.title?element.data.title.slice(0,40):""} description={element.data.selftext_html?element.data.selftext_html:""} newsUrl={element.data.url?element.data.url:""} score={element.data.score?element.data.score:"no data"}/>
+                        return <div className='col-md-12 my-3' key={element.data.created}>
+                            <Cards title={element.data.title?element.data.title:""} description={element.data.selftext_html?element.data.selftext_html:""} newsUrl={element.data.url?element.data.url:""} score={element.data.score?element.data.score:"no data"}/>
                         </div>
                     })}
                 </div>
@@ -33,4 +31,4 @@ export class News extends Component {
     }
 }
 
-export default News
+export default Main
