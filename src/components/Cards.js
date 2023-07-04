@@ -13,12 +13,10 @@ export class Cards extends Component {
       <div>
         <div className="card sm" style={{ width: "100%" }}>
           <div className="card-body">
-            <h5 className="card-title">{title}</h5>
+            <h1 className="card-title">{title}</h1>
             
             <div
-              className="card-text"
-              dangerouslySetInnerHTML={{ __html: htmlDecode(description) }}
-            ></div>
+              className="card-text" dangerouslySetInnerHTML={{ __html: htmlDecode(description) }}></div>
             <h5>score: {score}</h5>
             <a href={newsUrl} target="blank" className="btn btn-primary">Readmore</a>
           </div>
